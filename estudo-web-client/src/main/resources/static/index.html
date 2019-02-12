@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	    <title>Ptec - Invocar Micro Serviço em Projeto Web</title>
+	
+	    <!-- Bootstrap Core CSS -->
+	    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	    <!-- Custom Fonts -->
+	    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	
+	    <!-- Plugin CSS -->
+	    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+	
+	    <!-- Theme CSS -->
+	    <link href="css/creative.min.css" rel="stylesheet">
+	</head>
+	
+	<body id="page-top">
+	    <header>
+	        <div class="header-content">
+	            <div class="header-content-inner">
+	                <h1 id="homeHeading">Ptec - Invocar Micro Serviço em Projeto Web</h1>
+	                <hr>
+	                <a href="#" class="btn btn-primary btn-xl page-scroll" onclick="autenticarOAuth();" id="autenticarOAuth">Autenticar OAuth</a>
+	                <a href="#" class="btn btn-primary btn-xl page-scroll" onclick="gerarLicencaSoftware();" id="gerarLicencaSoftware">Gerar Licença</a>
+	            </div>
+	        </div>
+	    </header>
+	</body>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	<script>
+		var tokenOAuth = null;
+		var expires_in = 0;
+		
+		function autenticarOAuth() {
+			$.ajax({
+		        type : 'POST',
+		        url : 'http://localhost:9092/oauth/token',
+		        data : {
+		            'grant_type' : 'password',
+		            'username' : 'admin',
+		            'password' : '123456',
+		            'scope' : 'read write'
+		        },
+				beforeSend: function(xhr) {
+					xhr.setRequestHeader("Authorization", "Basic Y29kZXJlZjokMmEkMTAkcDlQazBmUU5BUVNlc0k0dnV2S0EwT1phbkREMg==")
+				},
+		        success : function(result) {
+		        	console.log("Access token = " + result.access_token);
+				    console.log("Refresh token = " + result.refresh_token);
+				    console.log("Expires in = " + result.expires_in);
+				    tokenOAuth = result.access_token;
+				    expires_in = result.expires_in;
+		        },
+		        error: function (XMLHttpRequest, textStatus, errorThrown) {
+		        	console.log(XMLHttpRequest.responseText);
+					console.log("Status: " + textStatus, "Error: " + errorThrown);
+				}
+	    	});
+		}
+		
+		function gerarLicencaSoftware() {
+        	if (expires_in > 0){
+				$.ajax({
+			        type : 'POST',
+			        url : 'http://localhost:9093/geradorLicenca/gerarToken',
+			        data : JSON.stringify({
+						"empresa": "Estudo Software",
+						"idEmpresa": "1",
+						"idOrganizacao": "1",
+						"cnpjEmpresa": "45.416.351/0001-16",
+						"urlSistema": "http://localhost:9091/",
+						"qtdeDiaLicenca": 90
+			        }), 
+			        headers: {
+			            "Authorization": "Bearer " + tokenOAuth,
+			            "Content-Type": "application/json"
+			        },
+			        success : function(result) {
+			        	console.log("Resultado", result);
+			        },
+			        error: function (XMLHttpRequest, textStatus, errorThrown) {
+			        	console.log(XMLHttpRequest.responseText);
+						console.log("Status: " + textStatus, "Error: " + errorThrown);
+					}
+		    	});
+        	} else {
+        		console.log("Token expirado realize autenticação OAuth.");
+        	}
+		}		
+	</script>
+</html>

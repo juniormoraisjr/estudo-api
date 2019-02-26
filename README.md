@@ -18,8 +18,8 @@ Projeto estudo-licenca-software-server é nosso microserviço que tem a funciona
 
 ## Microserviço Licença Software Client
 
-Projeto estudo-licenca-software-client é um microserviço que tem a funcionalidade de chamar recursos de outro microserviço. Implementamos este projeto com o intuito de validar e documentar uma forma de consumir recursos/funcionalidades de outros microserviços, ou seja, este microserviço não implementa nenhuma funcionalidade nova mas realiza a centralização e consumo de funcionalidades implementadas em diferentes microservicos.
+Projeto estudo-licenca-software-client é um microserviço que tem a funcionalidade de chamar recursos de outro microserviço, desta forma o intuito do projeto é validar/documentar uma forma de consumir recursos/funcionalidades de outros microserviços. Este microserviço não implementa nenhuma funcionalidade nova mas realiza a centralização/consumo de funcionalidades implementadas em diferentes microservicos.
 
 ## Web Client
 
-Projeto estudo-web-client
+Projeto estudo-web-client é um projeto WEB implementado com o intuito de consumir recursos/funcionalidades dos microserviços, através das chamadas AJAX, JQUERY.

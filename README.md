@@ -2,6 +2,10 @@
 
 Projeto de estudo utilizado para criar uma Arquitetura de MicroServices com Spring Cloud e Spring Boot.
 
+## Config Server
+
+O Projeto estudo-api-config é nosso Servidor de Configuração, que tem como objetivo de centralizar todas as configurações da nossa rede de Microservices em um só lugar. Ele é responsável por ler as informações no repositório e fornece-las às aplicações através de requests HTTP.
+
 ## Eureka Server
 
 O Projeto estudo-eureka-server é nosso Service Registry, que será responsável por gerenciar o status e a localização dos Microservices em nossa rede. 

@@ -14,11 +14,11 @@ O Projeto estudo-oauth-server é nosso Servidor de Autorização, que será resp
 
 ## Microserviço Licença Software Server
 
-Projeto estudo-licenca-software-server é nosso microserviço utilizado para gerar uma licença de software, onde realizamos uma chamada POST passando alguns parâmetros e o mesmo nos gera um token que poderá ser utilizado como licença de um software.
+Projeto estudo-licenca-software-server é nosso microserviço que tem a funcionalidade de gerar uma licença de software, através de uma chamada POST passando alguns parâmetros e retornando um token que poderá ser utilizado como licença de um software.
 
 ## Microserviço Licença Software Client
 
-Projeto estudo-licenca-software-client é outro microserviço cliente que irá chamar outro microserviço.
+Projeto estudo-licenca-software-client é um microserviço que tem a funcionalidade de chamar recursos de outro microserviço. Implementamos este projeto com o intuito de validar e documentar uma forma de consumir recursos/funcionalidades de outros microserviços, ou seja, este microserviço não implementa nenhuma funcionalidade nova mas realiza a centralização e consumo de funcionalidades implementadas em diferentes microservicos.
 
 ## Web Client
 

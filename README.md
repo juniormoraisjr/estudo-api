@@ -47,7 +47,7 @@ Projeto estudo-licenca-software-server é nosso microserviço que tem a funciona
 
 Este será o 4º projeto a ser inicializado com o Spring Boot App. 
 
-Após inicializado basta utilizar o Postman para solicitar a licença de Software, para fazer essa requisição teremos que enviar os seguintes dados:
+Após inicializado basta utilizar o Postman para solicitar a Licença de Software, para fazer essa requisição teremos que enviar os dados informados abaixo, mas na opção do Bearer devemos informar o token obtido através do OAuth:
 
 ```
 URL: http://localhost:9093/geradorLicenca/gerarToken

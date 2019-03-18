@@ -85,3 +85,7 @@ Projeto estudo-licenca-software-client é um microserviço que tem a funcionalid
 ## Web Client
 
 Projeto estudo-web-client é um projeto WEB implementado com o intuito de consumir recursos/funcionalidades dos microserviços, através das chamadas AJAX, JQUERY.
+
+Este projeto deve ser inicializado após a inicialização dos demais e para acessá-lo utilize a url http://localhost:8080/.
+
+Será apresentado uma tela inicial com dois botões que quando acionados irá exibir o resultado no console do navegador.

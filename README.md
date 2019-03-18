@@ -1,4 +1,4 @@
-# PROJETO DE ESTUDO SPRING CLOUD E SPRING BOOT
+# Projeto Estudo Spring Cloud e Spring Boot
 
 Projeto de estudo utilizado para criar uma Arquitetura de MicroServices com Spring Cloud e Spring Boot.
 

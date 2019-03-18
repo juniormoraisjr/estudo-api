@@ -6,11 +6,15 @@ Projeto de estudo utilizado para criar uma Arquitetura de MicroServices com Spri
 
 O Projeto estudo-api-config é nosso Servidor de Configuração, que tem como objetivo de centralizar todas as configurações da nossa rede de Microservices em um só lugar. Ele é responsável por ler as informações no repositório e fornece-las às aplicações através de requests HTTP.
 
+Este será o 1º projeto a ser inicializado com o Spring Boot App.
+
 ## Eureka Server
 
 O Projeto estudo-eureka-server é nosso Service Registry, que será responsável por gerenciar o status e a localização dos Microservices em nossa rede. 
 
 Para isso utilizamos o Eureka, que é um serviço REST (Representational State Transfer) utilizado principalmente na nuvem AWS (Amazon Web Services) para localizar serviços com o objetivo de balanceamento de carga e failover de servidores.
+
+Este será o 2º projeto a ser inicializado com o Spring Boot App. Após inicializado basta acessar a url http://localhost:9091/ e será apresentado o System Status dos microserviços. Veja exemplo abaixo:
 
 ## OAuth2
 

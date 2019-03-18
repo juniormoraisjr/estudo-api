@@ -14,11 +14,26 @@ O Projeto estudo-eureka-server é nosso Service Registry, que será responsável
 
 Para isso utilizamos o Eureka, que é um serviço REST (Representational State Transfer) utilizado principalmente na nuvem AWS (Amazon Web Services) para localizar serviços com o objetivo de balanceamento de carga e failover de servidores.
 
-Este será o 2º projeto a ser inicializado com o Spring Boot App. Após inicializado basta acessar a url http://localhost:9091/ e será apresentado o System Status dos microserviços. Veja exemplo abaixo:
+Este será o 2º projeto a ser inicializado com o Spring Boot App. 
+
+Após inicializado basta acessar a url http://localhost:9091/ e será apresentado o System Status dos microserviços. Veja exemplo abaixo:
 
 ## OAuth2
 
 O Projeto estudo-oauth-server é nosso Servidor de Autorização, que será responsável por controlar a autenticação e autorização de nossos recursos(microserviços). 
+
+Este será o 3º projeto a ser inicializado com o Spring Boot App. 
+
+Após inicializado basta utilizar o Postman para Solicitar um Token de Acesso. Para isto o Client deverá estar registrado no servidor de autorização e deve enviar o client-id e o secret que configuramos no application.yml codificado no formato Base 64, respeitando o padrão client-id:secret. Para fazer essa requisição teremos que enviar os seguintes dados:
+
+```
+Authorization: Basic Y29kZXJlZjokMmEkMTAkcDlQazBmUU5BUVNlc0k0dnV2S0EwT1phbkREMg==
+URL: http://localhost:9092/oauth/token?grant_type=password&username=admin&password=123456
+Method: POST
+Content-Type: application/json
+
+(Verifique a imagem abaixo.)
+```
 
 ## Microserviço Licença Software Server
 

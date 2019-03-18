@@ -82,6 +82,8 @@ Veja exemplo abaixo:
 
 Projeto estudo-licenca-software-client é um microserviço que tem a funcionalidade de chamar recursos de outro microserviço, desta forma o intuito do projeto é validar/documentar uma forma de consumir recursos/funcionalidades de outros microserviços. Este microserviço não implementa nenhuma funcionalidade nova mas realiza a centralização/consumo de funcionalidades implementadas em diferentes microservicos.
 
+Para executar utilize os mesmos dados informado no item Microserviço Licença Software Server alterando apenas a url invocada que será http://localhost:9094/geradorLicencaClient/gerarTokenClient.
+
 ## Web Client
 
 Projeto estudo-web-client é um projeto WEB implementado com o intuito de consumir recursos/funcionalidades dos microserviços, através das chamadas AJAX, JQUERY.

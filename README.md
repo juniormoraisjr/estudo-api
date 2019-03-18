@@ -45,6 +45,39 @@ Veja exemplo abaixo:
 
 Projeto estudo-licenca-software-server é nosso microserviço que tem a funcionalidade de gerar uma licença de software, através de uma chamada POST passando alguns parâmetros e retornando um token que poderá ser utilizado como licença de um software.
 
+Este será o 4º projeto a ser inicializado com o Spring Boot App. 
+
+Após inicializado basta utilizar o Postman para solicitar a licença de Software, para fazer essa requisição teremos que enviar os seguintes dados:
+
+```
+URL: http://localhost:9093/geradorLicenca/gerarToken
+Authorization: Bearer e818e132-6e96-4f5c-9a51-f1332d43d3d7
+Content-Type: application/json
+Method: POST
+Content-Type: application/json
+```
+
+Veja exemplo abaixo:
+
+![](/EvidenciaMicroservicoLicencaServer2.png)
+
+```
+Body:
+{
+  "urlSistema": "http://exemplourlsite.com.br",
+  "empresa": "Nome da Empresa",
+  "idEmpresa": "1",
+  "cnpjEmpresa": "46.900.152/0001-41",
+  "idOrganizacao": "1",
+  "qtdeDiaLicenca": 30
+}
+Type : raw
+```
+
+Veja exemplo abaixo:
+
+![](/EvidenciaMicroservicoLicencaServer.png)
+
 ## Microserviço Licença Software Client
 
 Projeto estudo-licenca-software-client é um microserviço que tem a funcionalidade de chamar recursos de outro microserviço, desta forma o intuito do projeto é validar/documentar uma forma de consumir recursos/funcionalidades de outros microserviços. Este microserviço não implementa nenhuma funcionalidade nova mas realiza a centralização/consumo de funcionalidades implementadas em diferentes microservicos.
